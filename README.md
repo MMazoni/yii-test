@@ -58,3 +58,28 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
+### Install with Docker
+
+Update your vendor packages
+
+    docker-compose run --rm backend composer update --prefer-dist
+
+Run the installation triggers (creating cookie validation code)
+
+    docker-compose run --rm backend composer install
+
+Start the container
+
+    docker-compose up -d
+
+Init application
+
+    docker-compose run --rm backend php init
+
+You can then access the application through the following URL:
+
+    # Frontend
+    http://127.0.0.1:20080
+    # Backend
+    http://127.0.0.1:21080
