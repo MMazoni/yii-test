@@ -83,3 +83,20 @@ You can then access the application through the following URL:
     http://127.0.0.1:20080
     # Backend
     http://127.0.0.1:21080
+
+
+### Connection to Database
+
+```php
+'db' => [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'pgsql:host=pgsql;dbname=yii2ecommerce',
+    'username' => 'postgres',
+    'password' => 'postgres',
+    'charset' => 'utf8',
+]
+```
+
+Migrate
+
+    docker-compose run --rm backend php yii migrate
